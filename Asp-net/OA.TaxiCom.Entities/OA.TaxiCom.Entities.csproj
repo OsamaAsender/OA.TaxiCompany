@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OA.TaxiCom.Utils\OA.TaxiCom.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
