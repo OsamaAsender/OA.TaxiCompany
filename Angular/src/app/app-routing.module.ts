@@ -1,12 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { DriverComponent } from './driver/driver.component';
+import { CarComponent } from './car/car.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
   },
+  {
+    path: 'driver',
+    component: DriverComponent
+  },
+  {
+    path:'car',
+    component: CarComponent
+  },
+  {
+    path: '',
+    redirectTo:'home',
+    pathMatch:'full'
+  }
 ];
 
 @NgModule({
