@@ -6,21 +6,30 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DriverComponent } from './driver/driver.component';
 import { CarComponent } from './car/car.component';
+
+import {MatButtonModule} from '@angular/material/button';
+
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CreateUpdateCarComponent } from './car/create-update-car/create-update-car.component';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DriverComponent,
-    CarComponent
+    CarComponent,
+    CreateUpdateCarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

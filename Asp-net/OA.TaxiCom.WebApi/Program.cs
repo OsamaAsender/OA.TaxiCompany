@@ -8,7 +8,22 @@ namespace OA.TaxiCom.WebApi
     {
         public static void Main(string[] args)
         {
+
+            
+            
             var builder = WebApplication.CreateBuilder(args);
+
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("http://localhost:4200");
+                                      policy.AllowAnyHeader();
+                                      policy.AllowAnyMethod();
+                                  });
+            });
 
             // Add services to the container.
 
@@ -33,8 +48,11 @@ namespace OA.TaxiCom.WebApi
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseRouting();
 
+            app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseAuthorization();
 
             app.MapControllers();
 
