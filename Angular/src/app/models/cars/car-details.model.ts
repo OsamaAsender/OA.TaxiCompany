@@ -1,6 +1,6 @@
 import { Booking } from '../bookings/booking.model';
 
-export interface CarDetails {
+export interface CarDetailsModel {
   id: number;
   platenumber: string;
   model: string;
