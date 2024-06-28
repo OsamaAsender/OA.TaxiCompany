@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CreateUpdateCarComponent } from './car/create-update-car/create-update-car.component';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { CarDetailsComponent } from './car/cardetails/cardetails.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
     HomeComponent,
     DriverComponent,
     CarComponent,
-    CreateUpdateCarComponent
+    CreateUpdateCarComponent,
+    CarDetailsComponent,
   ],
   imports: [
     BrowserModule,

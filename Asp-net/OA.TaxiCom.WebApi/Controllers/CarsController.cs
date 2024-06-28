@@ -41,9 +41,14 @@ namespace OA.TaxiCom.WebApi.Controllers
 
         
         [HttpGet("{id}")]
-        public async Task<ActionResult<Car>> GetCar(int id)
+        public async Task<ActionResult<CarDetailsDto>> GetCar(int id)
         {
-            var car = await _context.Cars.FindAsync(id);
+            var car = await _context
+                                   .Cars
+                                   .Include(c => c.Driver)
+                                   .Include(c => c.Bookings)
+                                   .Where( c => c.Id == id)
+                                   .SingleOrDefaultAsync();
 
             if (car == null)
             {
@@ -52,7 +57,7 @@ namespace OA.TaxiCom.WebApi.Controllers
 
             var carDetailsDto = _mapper.Map<CarDetailsDto>(car);
 
-            return car;
+            return carDetailsDto;
         }
 
         // PUT: api/Cars/5

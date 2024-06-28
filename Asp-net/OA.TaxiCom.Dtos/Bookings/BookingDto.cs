@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OA.TaxiCom.Dto.Passengers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace OA.TaxiCom.Dto.Bookings
 
         [Column(TypeName = "decimal(4,2)")]
         public decimal Price { get; set; }
+
+        public List<PassengerDto> Passengers { get; set; } = [];
         public string DriverFullName { get; set; }
         public string DriverPhoneNumber { get; set; }
         public string DriverRating { get; set; }

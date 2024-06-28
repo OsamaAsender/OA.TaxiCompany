@@ -1,10 +1,5 @@
 ﻿using OA.TaxiCom.Dto.Bookings;
 using OA.TaxiCom.Utils.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OA.TaxiCom.Dto.Cars
 {

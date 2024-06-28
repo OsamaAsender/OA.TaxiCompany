@@ -5,3 +5,11 @@ export interface CarModel {
     "modelDate" : string ,
     "driverFullName" : string
 }
+
+// id: number;
+// platenumber: string;
+// model: string;
+// modelDate: number;
+// powerType: number;
+// driverFullName: string;
+// bookings: Booking[]; //custom Object

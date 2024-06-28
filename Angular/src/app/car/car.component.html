@@ -13,12 +13,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>PlateNumber</td>
-      <td>Model</td>
-      <td>ModelDate</td>
-      <td>Driver</td>
-      <td>Actions</td>
+    <tr *ngFor="let car of cars">
+      <td>{{car.plateNumber}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.modelDate}}</td>
+      <td>{{car.modelDate}}</td>
+      <td>{{car.driverFullName}}</td>
     </tr>
   </tbody>
 </table>
